@@ -4348,38 +4348,28 @@ describe('no source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 6 'clock: nullableAB,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 8 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 14 'clock: nullableAB,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'AB'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         Unmarked error at test line 20 'clock: nullableAB,'
-        lack of expected error at test line 16 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         'clk' is possibly 'null'.
-        Unmarked error at test line 26 'clock: nullableAB,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 28 'target: strt,'
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         'clk' is possibly 'null'.
         Unmarked error at test line 33 'clock: nullableAB,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 39 'clock: nullableAB,'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 36 'filter: (clk: AB) => clk.a > 0,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 41 'target: strt,'
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         lack of expected error at test line 43 'filter: (clk: AB) => clk.a > 0,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 48 'clock: nullableAB,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        Unmarked error at test line 54 'clock: nullableAB,'
-        lack of expected error at test line 50 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB; targetType: number; }; }'.
-        Unmarked error at test line 60 'clock: nullableAB,'
-        lack of expected error at test line 56 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB; targetType: number; }; }'.
-        lack of expected error at test line 62 'target: strt,'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'AB'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -5157,38 +5147,24 @@ describe('no source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 6 'clock: [ab,nullableAB],'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 8 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 14 'clock: [ab,nullableAB],'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         Unmarked error at test line 20 'clock: [ab,nullableAB],'
-        lack of expected error at test line 16 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         'clk' is possibly 'null'.
-        Unmarked error at test line 26 'clock: [ab,nullableAB],'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 28 'target: strt,'
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         'clk' is possibly 'null'.
         Unmarked error at test line 33 'clock: [ab,nullableAB],'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 39 'clock: [ab,nullableAB],'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 36 'filter: (clk: AB) => clk.a > 0,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        lack of expected error at test line 41 'target: strt,'
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
         lack of expected error at test line 43 'filter: (clk: AB) => clk.a > 0,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
-        Unmarked error at test line 48 'clock: [ab,nullableAB],'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: number; }; }'.
-        Unmarked error at test line 54 'clock: [ab,nullableAB],'
-        lack of expected error at test line 50 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB; targetType: number; }; }'.
-        Unmarked error at test line 60 'clock: [ab,nullableAB],'
-        lack of expected error at test line 56 'target: strt,'
-        Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB; targetType: number; }; }'.
-        lack of expected error at test line 62 'target: strt,'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -6412,7 +6388,10 @@ describe('bad filter', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Unmarked error at test line 4 'clock: nullableAB,'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+      Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
+        Types of property '__' are incompatible.
+          Type 'AB | null' is not assignable to type 'AB'.
+            Type 'null' is not assignable to type 'AB'.
       Unmarked error at test line 9 'sample({'
       lack of expected error at test line 7 'filter: null,'
       Argument of type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; fn: (val: AB | null) => { a: number; b: string; }; }]' is not assignable to parameter of type '[config: { clock: EventCallable<AB | null>; source?: undefined; filter?: (((clk: AB | null) => clk is AB | null) & ((clk: AB | null) => clk is AB | null)) | undefined; fn?: (((clk: AB | null) => any) & ((clk: AB | null) => any)) | undefined; target: StoreWritable<...>; greedy?: boolean | undefined; batch?: boolean |...'.
@@ -6468,7 +6447,7 @@ describe('bad filter', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Unmarked error at test line 4 'clock: nullableAB,'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: AB | null; targetType: AB; }; }'.
+      Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
       Unmarked error at test line 9 'sample({'
       lack of expected error at test line 7 'filter: () => 1,'
       Argument of type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: () => number; fn: (val: AB | null) => { a: number; b: string; }; }]' is not assignable to parameter of type '[config: { clock: EventCallable<AB | null>; source?: undefined; filter?: (((clk: AB | null) => clk is AB | null) & ((clk: AB | null) => clk is AB | null)) | undefined; fn?: (((clk: AB | null) => any) & ((clk: AB | null) => any)) | undefined; target: StoreWritable<...>; greedy?: boolean | undefined; batch?: boolean |...'.
