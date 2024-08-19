@@ -84,21 +84,13 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 10 'source: ab,'
-        lack of expected error at test line 6 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 16 'source: ab,'
-        lack of expected error at test line 12 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 22 'source: abNull,'
-        lack of expected error at test line 18 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 28 'source: nullableAB,'
-        lack of expected error at test line 24 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        lack of expected error at test line 30 'target: abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -148,18 +140,12 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 10 'source: ab,'
-        lack of expected error at test line 6 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 16 'source: ab,'
-        lack of expected error at test line 12 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 22 'source: nullableAB,'
-        lack of expected error at test line 18 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 24 'target: aStr,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type 'AB'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -231,21 +217,11 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 11 'source: ab,'
-        lack of expected error at test line 7 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 18 'source: ab,'
-        lack of expected error at test line 14 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 25 'source: abNull,'
-        lack of expected error at test line 21 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 32 'source: nullableAB,'
-        lack of expected error at test line 28 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        lack of expected error at test line 35 'target: abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -300,18 +276,10 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 11 'source: ab,'
-        lack of expected error at test line 7 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 18 'source: ab,'
-        lack of expected error at test line 14 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 25 'source: nullableAB,'
-        lack of expected error at test line 21 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 28 'target: aStr,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -383,21 +351,11 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 11 'source: ab,'
-        lack of expected error at test line 7 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 18 'source: ab,'
-        lack of expected error at test line 14 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 25 'source: abNull,'
-        lack of expected error at test line 21 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        Unmarked error at test line 32 'source: nullableAB,'
-        lack of expected error at test line 28 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }; }'.
-        lack of expected error at test line 35 'target: abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -452,18 +410,10 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 11 'source: ab,'
-        lack of expected error at test line 7 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 18 'source: ab,'
-        lack of expected error at test line 14 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 25 'source: nullableAB,'
-        lack of expected error at test line 21 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 28 'target: aStr,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
         "
       `)
     })
@@ -695,54 +645,36 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 21 'source: ab,'
-        lack of expected error at test line 7 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 15 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 42 'source: ab,'
-        lack of expected error at test line 24 'abn,'
-        lack of expected error at test line 26 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type 'AB'.
         lack of expected error at test line 34 'abn,'
         lack of expected error at test line 37 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 59 'source: ab,'
-        lack of expected error at test line 45 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 53 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 80 'source: ab,'
-        lack of expected error at test line 62 'abn,'
-        lack of expected error at test line 64 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 72 'abn,'
         lack of expected error at test line 75 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 97 'source: ab,'
-        lack of expected error at test line 83 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 91 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 118 'source: abNull,'
-        lack of expected error at test line 100 'abn,'
-        lack of expected error at test line 102 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 110 'abn,'
         lack of expected error at test line 113 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 135 'source: abNull,'
-        lack of expected error at test line 121 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 129 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 156 'source: nullableAB,'
-        lack of expected error at test line 138 'abn,'
-        lack of expected error at test line 140 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 148 'abn,'
         lack of expected error at test line 151 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 173 'source: nullableAB,'
-        lack of expected error at test line 159 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 167 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 176 'abn,'
-        lack of expected error at test line 178 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 186 'abn,'
         lack of expected error at test line 189 'voidt,'
         "
@@ -938,36 +870,28 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 22 'source: ab,'
         lack of expected error at test line 7 'aStr,'
         lack of expected error at test line 16 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 61 'source: ab,'
-        lack of expected error at test line 25 'aStr,'
-        lack of expected error at test line 27 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 35 'aStr,'
         lack of expected error at test line 38 'voidt,'
         lack of expected error at test line 46 'aStr,'
         lack of expected error at test line 55 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 100 'source: ab,'
-        lack of expected error at test line 64 'aStr,'
-        lack of expected error at test line 66 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 74 'aStr,'
         lack of expected error at test line 77 'voidt,'
         lack of expected error at test line 85 'aStr,'
         lack of expected error at test line 94 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 139 'source: nullableAB,'
-        lack of expected error at test line 103 'aStr,'
-        lack of expected error at test line 105 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 113 'aStr,'
         lack of expected error at test line 116 'voidt,'
         lack of expected error at test line 124 'aStr,'
         lack of expected error at test line 133 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 142 'aStr,'
-        lack of expected error at test line 144 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 152 'aStr,'
         lack of expected error at test line 155 'voidt,'
         "
@@ -1229,54 +1153,34 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 23 'source: ab,'
-        lack of expected error at test line 8 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 17 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 46 'source: ab,'
-        lack of expected error at test line 27 'abn,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 38 'abn,'
         lack of expected error at test line 41 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 65 'source: ab,'
-        lack of expected error at test line 50 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 59 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 88 'source: ab,'
-        lack of expected error at test line 69 'abn,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 80 'abn,'
         lack of expected error at test line 83 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 107 'source: ab,'
-        lack of expected error at test line 92 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 101 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 130 'source: abNull,'
-        lack of expected error at test line 111 'abn,'
-        lack of expected error at test line 113 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 122 'abn,'
         lack of expected error at test line 125 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 149 'source: abNull,'
-        lack of expected error at test line 134 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 143 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 172 'source: nullableAB,'
-        lack of expected error at test line 153 'abn,'
-        lack of expected error at test line 155 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 164 'abn,'
         lack of expected error at test line 167 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 191 'source: nullableAB,'
-        lack of expected error at test line 176 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 185 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 195 'abn,'
-        lack of expected error at test line 197 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 206 'abn,'
         lack of expected error at test line 209 'voidt,'
         "
@@ -1492,36 +1396,28 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 24 'source: ab,'
         lack of expected error at test line 8 'aStr,'
         lack of expected error at test line 18 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 67 'source: ab,'
-        lack of expected error at test line 28 'aStr,'
-        lack of expected error at test line 30 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 39 'aStr,'
         lack of expected error at test line 42 'voidt,'
         lack of expected error at test line 51 'aStr,'
         lack of expected error at test line 61 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 110 'source: ab,'
-        lack of expected error at test line 71 'aStr,'
-        lack of expected error at test line 73 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 82 'aStr,'
         lack of expected error at test line 85 'voidt,'
         lack of expected error at test line 94 'aStr,'
         lack of expected error at test line 104 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 153 'source: nullableAB,'
-        lack of expected error at test line 114 'aStr,'
-        lack of expected error at test line 116 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 125 'aStr,'
         lack of expected error at test line 128 'voidt,'
         lack of expected error at test line 137 'aStr,'
         lack of expected error at test line 147 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 157 'aStr,'
-        lack of expected error at test line 159 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 168 'aStr,'
         lack of expected error at test line 171 'voidt,'
         "
@@ -1783,54 +1679,34 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: ab,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 23 'source: ab,'
-        lack of expected error at test line 8 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 17 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 46 'source: ab,'
-        lack of expected error at test line 27 'abn,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 38 'abn,'
         lack of expected error at test line 41 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 65 'source: ab,'
-        lack of expected error at test line 50 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 59 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 88 'source: ab,'
-        lack of expected error at test line 69 'abn,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 80 'abn,'
         lack of expected error at test line 83 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 107 'source: ab,'
-        lack of expected error at test line 92 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 101 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 130 'source: abNull,'
-        lack of expected error at test line 111 'abn,'
-        lack of expected error at test line 113 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 122 'abn,'
         lack of expected error at test line 125 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 149 'source: abNull,'
-        lack of expected error at test line 134 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 143 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 172 'source: nullableAB,'
-        lack of expected error at test line 153 'abn,'
-        lack of expected error at test line 155 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 164 'abn,'
         lack of expected error at test line 167 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: ABN; }[]; }'.
-        Unmarked error at test line 191 'source: nullableAB,'
-        lack of expected error at test line 176 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 185 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 195 'abn,'
-        lack of expected error at test line 197 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 206 'abn,'
         lack of expected error at test line 209 'voidt,'
         "
@@ -2046,36 +1922,28 @@ describe('unit source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 24 'source: ab,'
         lack of expected error at test line 8 'aStr,'
         lack of expected error at test line 18 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 67 'source: ab,'
-        lack of expected error at test line 28 'aStr,'
-        lack of expected error at test line 30 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 39 'aStr,'
         lack of expected error at test line 42 'voidt,'
         lack of expected error at test line 51 'aStr,'
         lack of expected error at test line 61 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 110 'source: ab,'
-        lack of expected error at test line 71 'aStr,'
-        lack of expected error at test line 73 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 82 'aStr,'
         lack of expected error at test line 85 'voidt,'
         lack of expected error at test line 94 'aStr,'
         lack of expected error at test line 104 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 153 'source: nullableAB,'
-        lack of expected error at test line 114 'aStr,'
-        lack of expected error at test line 116 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 125 'aStr,'
         lack of expected error at test line 128 'voidt,'
         lack of expected error at test line 137 'aStr,'
         lack of expected error at test line 147 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: AB; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 157 'aStr,'
-        lack of expected error at test line 159 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<AB>'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<AB>'.
         lack of expected error at test line 168 'aStr,'
         lack of expected error at test line 171 'voidt,'
         "
@@ -2185,24 +2053,28 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 21 'source: {a,b},'
-        lack of expected error at test line 7 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 15 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 42 'source: {a,b},'
-        lack of expected error at test line 24 'abn,'
-        lack of expected error at test line 26 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 34 'abn,'
         lack of expected error at test line 37 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 59 'source: {a,b},'
-        lack of expected error at test line 45 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 53 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 62 'abn,'
-        lack of expected error at test line 64 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 72 'abn,'
         lack of expected error at test line 75 'voidt,'
         "
@@ -2312,20 +2184,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 22 'source: {a,b},'
         lack of expected error at test line 7 'aStr,'
         lack of expected error at test line 16 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 61 'source: {a,b},'
-        lack of expected error at test line 25 'aStr,'
-        lack of expected error at test line 27 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 35 'aStr,'
         lack of expected error at test line 38 'voidt,'
         lack of expected error at test line 46 'aStr,'
         lack of expected error at test line 55 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 64 'aStr,'
-        lack of expected error at test line 66 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 74 'aStr,'
         lack of expected error at test line 77 'voidt,'
         "
@@ -2445,24 +2321,28 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 23 'source: {a,b},'
-        lack of expected error at test line 8 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 17 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 46 'source: {a,b},'
-        lack of expected error at test line 27 'abn,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 38 'abn,'
         lack of expected error at test line 41 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 65 'source: {a,b},'
-        lack of expected error at test line 50 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 59 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 69 'abn,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 80 'abn,'
         lack of expected error at test line 83 'voidt,'
         "
@@ -2584,20 +2464,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 24 'source: {a,b},'
         lack of expected error at test line 8 'aStr,'
         lack of expected error at test line 18 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 67 'source: {a,b},'
-        lack of expected error at test line 28 'aStr,'
-        lack of expected error at test line 30 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 39 'aStr,'
         lack of expected error at test line 42 'voidt,'
         lack of expected error at test line 51 'aStr,'
         lack of expected error at test line 61 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 71 'aStr,'
-        lack of expected error at test line 73 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 82 'aStr,'
         lack of expected error at test line 85 'voidt,'
         "
@@ -2717,24 +2601,28 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 23 'source: {a,b},'
-        lack of expected error at test line 8 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 17 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        Unmarked error at test line 46 'source: {a,b},'
-        lack of expected error at test line 27 'abn,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 38 'abn,'
         lack of expected error at test line 41 'voidt,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }[]; }'.
-        Unmarked error at test line 65 'source: {a,b},'
-        lack of expected error at test line 50 'abn,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
         lack of expected error at test line 59 'abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | ABN; }[]; }'.
-        lack of expected error at test line 69 'abn,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 80 'abn,'
         lack of expected error at test line 83 'voidt,'
         "
@@ -2856,20 +2744,24 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 24 'source: {a,b},'
         lack of expected error at test line 8 'aStr,'
         lack of expected error at test line 18 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        Unmarked error at test line 67 'source: {a,b},'
-        lack of expected error at test line 28 'aStr,'
-        lack of expected error at test line 30 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 39 'aStr,'
         lack of expected error at test line 42 'voidt,'
         lack of expected error at test line 51 'aStr,'
         lack of expected error at test line 61 'aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: void | { a: string; }; }[]; }'.
-        lack of expected error at test line 71 'aStr,'
-        lack of expected error at test line 73 'voidt,'
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '{ a: number; b: string; }'.
         lack of expected error at test line 82 'aStr,'
         lack of expected error at test line 85 'voidt,'
         "
@@ -2929,20 +2821,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Unmarked error at test line 10 'source: {a,b},'
-        lack of expected error at test line 6 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        lack of expected error at test line 12 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 18 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 20 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 26 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 28 'target: aStr,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -2983,14 +2875,18 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 10 'source: {a,b},'
-        lack of expected error at test line 6 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 12 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -3056,20 +2952,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Unmarked error at test line 11 'source: {a,b},'
-        lack of expected error at test line 7 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        lack of expected error at test line 14 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 20 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 23 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 29 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 32 'target: aStr,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -3116,15 +3012,21 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 11 'source: {a,b},'
-        lack of expected error at test line 7 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 14 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -3190,20 +3092,20 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        Unmarked error at test line 11 'source: {a,b},'
-        lack of expected error at test line 7 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: ABN; }; }'.
-        lack of expected error at test line 14 'target: abn,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 20 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 23 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: AB; }; }'.
-        Unmarked error at test line 29 'source: {a},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 32 'target: aStr,'
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Type 'EventCallable<ABN>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          The types of '__.b' are incompatible between these types.
+            Type 'number' is not assignable to type 'string'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
+        Property 'b' is missing in type '{ a: StoreWritable<number>; }' but required in type '{ a: Store<number>; b: Store<string>; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; }>'.
+          The types of '__.a' are incompatible between these types.
+            Type 'string' is not assignable to type 'number'.
         "
       `)
     })
@@ -3250,15 +3152,21 @@ describe('object source', () => {
       }
       expect(typecheck).toMatchInlineSnapshot(`
         "
-        Unmarked error at test line 4 'source: {a,b},'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        Unmarked error at test line 11 'source: {a,b},'
-        lack of expected error at test line 7 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number; b: string; }; targetType: { a: string; }; }; }'.
-        lack of expected error at test line 14 'target: aStr,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: { a: number | null; b: string; }; targetType: { a: number; }; }; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: string; }>' is not assignable to type 'Unit<{ a: number; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: string; }' but required in type '{ a: number; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
+        Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: number | null; b: string; }>'.
+          Types of property '__' are incompatible.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: number | null; b: string; }'.
         "
       `)
     })
@@ -3601,21 +3509,23 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b], target:[lNumStr]           , filter:(val) => val[0] > 0})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b], target:[lNumStr]           , filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b], target:[lNumStr,anyt]      , filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 5 'sample({source:[a,b], target:[lNumStr,voidt]     , filter:(val) => val[0] > 0})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
+          Types of property '__' are incompatible.
+            Type 'void' is not assignable to type '(string | number)[]'.
         Unmarked error at test line 5 'sample({source:[a,b], target:[lNumStr,voidt]     , filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 6 'sample({source:[a,b], target:[lNumStr,anyt,voidt], filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 7 'sample({source:[a,b], target:[lNumStr]           , filter:$filter            })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 9 'sample({source:[a,b], target:[lNumStr,voidt]     , filter:$filter            })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -3702,31 +3612,27 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 9 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 7 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 18 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 15 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 21 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
-        Unmarked error at test line 28 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 24 'lNumNum,'
-        lack of expected error at test line 26 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
+        Unmarked error at test line 28 'filter: (val) => val[0] > 0,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 39 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 34 'lNumNum,'
         lack of expected error at test line 37 'voidt,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 42 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Unmarked error at test line 59 'source: [a,b],'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 45 'lNumNum,'
         lack of expected error at test line 53 'lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
         lack of expected error at test line 62 'lNumNum,'
-        lack of expected error at test line 64 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         lack of expected error at test line 72 'lNumNum,'
         lack of expected error at test line 75 'voidt,'
         "
@@ -3753,33 +3659,33 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b], clock:anyt, target:[lNumStr]           , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b], clock:anyt, target:[lNumStr]           , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b], clock:anyt, target:[lNumStr,anyt]      , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 5 'sample({source:[a,b], clock:anyt, target:[lNumStr,voidt]     , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Unmarked error at test line 5 'sample({source:[a,b], clock:anyt, target:[lNumStr,voidt]     , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 6 'sample({source:[a,b], clock:anyt, target:[lNumStr,anyt,voidt], filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 7 'sample({source:[a,b], clock:numt, target:[lNumStr]           , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 7 'sample({source:[a,b], clock:numt, target:[lNumStr]           , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 8 'sample({source:[a,b], clock:numt, target:[lNumStr,anyt]      , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 9 'sample({source:[a,b], clock:numt, target:[lNumStr,voidt]     , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Unmarked error at test line 9 'sample({source:[a,b], clock:numt, target:[lNumStr,voidt]     , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 10 'sample({source:[a,b], clock:numt, target:[lNumStr,anyt,voidt], filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 11 'sample({source:[a,b], clock:anyt, target:[lNumStr]           , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 13 'sample({source:[a,b], clock:anyt, target:[lNumStr,voidt]     , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -3874,31 +3780,27 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 10 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 8 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 20 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 17 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 23 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
-        Unmarked error at test line 31 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 27 'lNumNum,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
+        Unmarked error at test line 31 'filter: (val) => val[0] > 0,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 43 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 38 'lNumNum,'
         lack of expected error at test line 41 'voidt,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 46 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Unmarked error at test line 65 'source: [a,b],'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 50 'lNumNum,'
         lack of expected error at test line 59 'lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
         lack of expected error at test line 69 'lNumNum,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         lack of expected error at test line 80 'lNumNum,'
         lack of expected error at test line 83 'voidt,'
         "
@@ -3925,33 +3827,33 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr]           , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr]           , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr,anyt]      , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 5 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr,voidt]     , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Unmarked error at test line 5 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr,voidt]     , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 6 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr,anyt,voidt], filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 7 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr]           , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 7 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr]           , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 8 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr,anyt]      , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 9 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr,voidt]     , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         Unmarked error at test line 9 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr,voidt]     , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 10 'sample({source:[a,b], clock:[numt,$num], target:[lNumStr,anyt,voidt], filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 11 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr]           , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 13 'sample({source:[a,b], clock:[anyt]     , target:[lNumStr,voidt]     , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, string]; }[]; }'.
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         "
       `)
     })
@@ -4046,31 +3948,27 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 10 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 8 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 20 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 17 'lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 23 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
-        Unmarked error at test line 31 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 27 'lNumNum,'
-        lack of expected error at test line 29 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
+        Unmarked error at test line 31 'filter: (val) => val[0] > 0,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 43 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 38 'lNumNum,'
         lack of expected error at test line 41 'voidt,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 46 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }[]; }'.
-        Unmarked error at test line 65 'source: [a,b],'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>[]; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 50 'lNumNum,'
         lack of expected error at test line 59 'lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: void | [number, number]; }[]; }'.
         lack of expected error at test line 69 'lNumNum,'
-        lack of expected error at test line 71 'voidt,'
+        Type 'EventCallable<void>' is not assignable to type 'Unit<(string | number)[]>'.
         lack of expected error at test line 80 'lNumNum,'
         lack of expected error at test line 83 'voidt,'
         "
@@ -4101,7 +3999,7 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b]         , target:lNumStr, filter:(val) => val[0] > 0})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b]         , target:lNumStr, filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b]         , target:anyt   , filter:(val) => val[0] > 0})'
@@ -4109,11 +4007,11 @@ describe('tuple source', () => {
         Unmarked error at test line 5 'sample({source:[a,b]         , target:voidt  , filter:(val) => val[0] > 0})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 9 'sample({source:[a,b]         , target:lNumStr, filter:$filter            })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 15 'sample({source:[a]           , target:lNum   , filter:(val) => val[0] > 0})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 17 'sample({source:[a]           , target:lNum   , filter:$filter            })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -4172,31 +4070,23 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 7 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 6 'target: lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 10 'source: [a,b] as const,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 16 'source: [a,b],'
-        lack of expected error at test line 12 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 22 'source: [a,b] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 18 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 28 'source: [a],'
-        lack of expected error at test line 24 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 34 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 30 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         Unmarked error at test line 40 'source: [a],'
-        lack of expected error at test line 36 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 46 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 42 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        lack of expected error at test line 48 'target: lNumNum,'
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
@@ -4233,7 +4123,7 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b]         , clock:anyt, target:lNumStr, filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b]         , clock:anyt, target:lNumStr, filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b]         , clock:anyt, target:anyt   , filter:(val) => val[0] > 0   })'
@@ -4241,7 +4131,7 @@ describe('tuple source', () => {
         Unmarked error at test line 5 'sample({source:[a,b]         , clock:anyt, target:voidt  , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 6 'sample({source:[a,b]         , clock:numt, target:lNumStr, filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 6 'sample({source:[a,b]         , clock:numt, target:lNumStr, filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 7 'sample({source:[a,b]         , clock:numt, target:anyt   , filter:(val, n) => val[0] > n})'
@@ -4249,13 +4139,13 @@ describe('tuple source', () => {
         Unmarked error at test line 8 'sample({source:[a,b]         , clock:numt, target:voidt  , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 15 'sample({source:[a,b]         , clock:anyt, target:lNumStr, filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 21 'sample({source:[a]           , clock:anyt, target:lNum   , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 22 'sample({source:[a]           , clock:numt, target:lNum   , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 25 'sample({source:[a]           , clock:anyt, target:lNum   , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -4322,31 +4212,23 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 8 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 7 'target: lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 11 'source: [a,b] as const,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 18 'source: [a,b],'
-        lack of expected error at test line 14 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 25 'source: [a,b] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 21 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 32 'source: [a],'
-        lack of expected error at test line 28 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 39 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 35 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         Unmarked error at test line 46 'source: [a],'
-        lack of expected error at test line 42 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 53 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 49 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        lack of expected error at test line 56 'target: lNumNum,'
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
@@ -4383,7 +4265,7 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 3 'sample({source:[a,b]         , clock:[anyt]     , target:lNumStr, filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 3 'sample({source:[a,b]         , clock:[anyt]     , target:lNumStr, filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 4 'sample({source:[a,b]         , clock:[anyt]     , target:anyt   , filter:(val) => val[0] > 0   })'
@@ -4391,7 +4273,7 @@ describe('tuple source', () => {
         Unmarked error at test line 5 'sample({source:[a,b]         , clock:[anyt]     , target:voidt  , filter:(val) => val[0] > 0   })'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 6 'sample({source:[a,b]         , clock:[numt,$num], target:lNumStr, filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 6 'sample({source:[a,b]         , clock:[numt,$num], target:lNumStr, filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 7 'sample({source:[a,b]         , clock:[numt,$num], target:anyt   , filter:(val, n) => val[0] > n})'
@@ -4399,13 +4281,13 @@ describe('tuple source', () => {
         Unmarked error at test line 8 'sample({source:[a,b]         , clock:[numt,$num], target:voidt  , filter:(val, n) => val[0] > n})'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
         Unmarked error at test line 15 'sample({source:[a,b]         , clock:[anyt]     , target:lNumStr, filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, string]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 21 'sample({source:[a]           , clock:[anyt]     , target:lNum   , filter:(val) => val[0] > 0   })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 22 'sample({source:[a]           , clock:[numt,$num], target:lNum   , filter:(val, n) => val[0] > n})'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 25 'sample({source:[a]           , clock:[anyt]     , target:lNum   , filter:$filter               })'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         "
       `)
     })
@@ -4472,31 +4354,23 @@ describe('tuple source', () => {
       expect(typecheck).toMatchInlineSnapshot(`
         "
         Unmarked error at test line 4 'source: [a,b],'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         Unmarked error at test line 8 'filter: (val) => val[0] > 0,'
         lack of expected error at test line 7 'target: lNumNum,'
         Operator '>' cannot be applied to types 'string | number' and 'number'.
-        Unmarked error at test line 11 'source: [a,b] as const,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 18 'source: [a,b],'
-        lack of expected error at test line 14 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: (string | number)[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 25 'source: [a,b] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<(string | number)[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 21 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number, string]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number, string]>'.
         Unmarked error at test line 32 'source: [a],'
-        lack of expected error at test line 28 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 39 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 35 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         Unmarked error at test line 46 'source: [a],'
-        lack of expected error at test line 42 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: number[]; targetType: [number, number]; }; }'.
-        Unmarked error at test line 53 'source: [a] as const,'
+        Object literal may only specify known properties, and 'source' does not exist in type '{ target: Unit<number[]>; error: \\"source should extend target type\\"; }'.
         lack of expected error at test line 49 'target: lNumNum,'
-        Object literal may only specify known properties, and 'source' does not exist in type '{ error: \\"source should extend target type\\"; targets: { sourceType: readonly [number]; targetType: [number, number]; }; }'.
-        lack of expected error at test line 56 'target: lNumNum,'
+        Type 'EventCallable<[number, number]>' is not assignable to type 'Unit<readonly [number]>'.
         "
       `)
     })
