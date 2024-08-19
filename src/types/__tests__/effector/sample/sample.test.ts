@@ -775,7 +775,7 @@ describe('derived unit in target', () => {
       Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: Store<boolean>; }'.
       Unmarked error at test line 22 'clock: trigger,'
       lack of expected error at test line 18 'target: $storeMap,'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: (Store<boolean> | Event<boolean>)[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"derived units are not allowed in target\\"; got: readonly [Event<boolean>, StoreWritable<boolean>, Store<boolean>]; }'.
       lack of expected error at test line 25 'target: [started, $store, $storeMap],'
       "
     `)
@@ -818,7 +818,14 @@ describe('derived unit in target', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 15 'incorrect,'
+      Unmarked error at test line 13 'correct,'
+      Type 'EventCallable<{ a: string; b: string; } | { a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; b: string; } | { a: number; }' is not assignable to type '{ a: string; b: string; }'.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
       "
     `)
   })
@@ -850,7 +857,11 @@ describe('derived unit in target', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
+      Unmarked error at test line 11 'clock,'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<{ a: string; b: string; } | { a: number; }>, { clockType: { a: string; b: string; }; targetType: { a: number; }; }]; }'.
+      Unmarked error at test line 19 'clock: [clock],'
       lack of expected error at test line 15 'incorrect,'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<{ a: string; b: string; } | { a: number; }>, { clockType: { a: string; b: string; }; targetType: { a: number; }; }]; }'.
       lack of expected error at test line 23 'incorrect,'
       "
     `)
@@ -886,7 +897,7 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 6 'clock: [exact, narrower],'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }, EventCallable<{ a: string; }>]; }'.
       "
     `)
   })
@@ -935,11 +946,11 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; }; }[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | null; targetType: { a: string; b: string; }; }, { clockType: { a: string; b: string; } | null; targetType: { ...; }; }]; }'.
       lack of expected error at test line 9 'target: [exact, narrower],'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; }; }[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | null; targetType: { a: string; b: string; }; }, { clockType: { a: string; b: string; } | null; targetType: { ...; }; }]; }'.
       lack of expected error at test line 15 'target: [exact, narrower],'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | null; targetType: { a: string; b: string; }; }[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | null; targetType: { a: string; b: string; }; }]; }'.
       "
     `)
   })
@@ -1003,9 +1014,11 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
+      Unmarked error at test line 7 'clock: ['
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }, EventCallable<{ a: string; }>]; }'.
       Unmarked error at test line 21 'clock: ['
       lack of expected error at test line 10 'clockNarrower,'
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }]; }'.
       lack of expected error at test line 24 'clockNarrower,'
       "
     `)
@@ -1027,7 +1040,7 @@ describe('mix of wider and narrower types', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }[]; }'.
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }]; }'.
       Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: { a: string; b: string; } | { a: string; }; targetType: { a: string; b: string; }; }; }'.
       "
     `)
@@ -1070,7 +1083,14 @@ describe('mix of wider and narrower types', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 15 'incorrect,'
+      Unmarked error at test line 13 'correct,'
+      Type 'EventCallable<{ a: string; b: string; } | { a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Type '{ a: string; b: string; } | { a: number; }' is not assignable to type '{ a: string; b: string; }'.
+            Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
+      Type 'EventCallable<{ a: number; }>' is not assignable to type 'Unit<{ a: string; b: string; }>'.
+        Types of property '__' are incompatible.
+          Property 'b' is missing in type '{ a: number; }' but required in type '{ a: string; b: string; }'.
       "
     `)
   })
@@ -1105,9 +1125,9 @@ describe('mix of wider and narrower types', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 13 'clock,'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<{ a: string; b: string; } | { a: number; }>, { clockType: { a: string; b: string; }; targetType: { a: number; }; }]; }'.
       lack of expected error at test line 17 'incorrect,'
-      lack of expected error at test line 22 'clock: [clock],'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<{ a: string; b: string; } | { a: number; }>, { clockType: { a: string; b: string; }; targetType: { a: number; }; }]; }'.
       lack of expected error at test line 26 'incorrect,'
       "
     `)
@@ -1143,11 +1163,11 @@ test('edge cases from issue #957 (should fail)', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    lack of expected error at test line 8 'clock,'
+    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [EventCallable<number>, { clockType: number; targetType: string; }]; }'.
     lack of expected error at test line 10 'target: [target1, target2],'
-    lack of expected error at test line 15 'clock,'
+    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string; }, EventCallable<number>]; }'.
     lack of expected error at test line 17 'target: [target2, target1],'
-    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: { clockType: number; targetType: string; }[]; }'.
+    Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: number; targetType: string; }]; }'.
     lack of expected error at test line 24 'target: [target2],'
     "
   `)
@@ -1167,7 +1187,7 @@ describe('cross mismatch', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 6 'clock: [str, num],'
+      Object literal may only specify known properties, and 'clock' does not exist in type '{ error: \\"clock should extend target type\\"; targets: readonly [{ clockType: string | number; targetType: string; }, { clockType: string | number; targetType: number; }]; }'.
       lack of expected error at test line 8 'target: [str, num],'
       "
     `)
