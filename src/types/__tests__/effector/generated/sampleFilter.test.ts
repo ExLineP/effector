@@ -4368,10 +4368,17 @@ describe('no source', () => {
         lack of expected error at test line 43 'filter: (clk: AB) => clk.a > 0,'
         Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
+        Unmarked error at test line 54 'clock: nullableAB,'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<number>'.
+          Types of property '__' are incompatible.
+            Type 'AB | null' is not assignable to type 'number'.
+              Type 'null' is not assignable to type 'number'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<AB | null>'.
           Types of property '__' are incompatible.
             Type 'number' is not assignable to type 'AB'.
         Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'AB'.
         "
       `)
     })
@@ -5163,7 +5170,15 @@ describe('no source', () => {
         lack of expected error at test line 43 'filter: (clk: AB) => clk.a > 0,'
         Type 'EventCallable<AB | null>' is not assignable to type 'Unit<AB>'.
         Type 'EventCallable<number>' is not assignable to type 'Unit<AB | null>'.
-        Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
+        Unmarked error at test line 54 'clock: [ab,nullableAB],'
+        Type 'EventCallable<AB>' is not assignable to type 'Unit<number>'.
+          Types of property '__' are incompatible.
+            Type 'AB' is not assignable to type 'number'.
+        Unmarked error at test line 54 'clock: [ab,nullableAB],'
+        Type 'EventCallable<AB | null>' is not assignable to type 'Unit<number>'.
+        Type 'EventCallable<number>' is not assignable to type 'UnitTargetable<AB>'.
+          Types of property '__' are incompatible.
+            Type 'number' is not assignable to type 'AB'.
         Type 'EventCallable<number>' is not assignable to type 'Unit<AB>'.
         "
       `)
@@ -6386,9 +6401,9 @@ describe('bad filter', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Unmarked error at test line 3 'sample({'
-      Argument of type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }]' is not assignable to parameter of type '[Omit<never, \\"target\\" | \\"clock\\"> & { clock: Unit<AB>; target: UnitTargetable<AB | null>; }] | [Omit<never, \\"target\\" | \\"clock\\"> & { ...; }]'.
-        Type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }]' is not assignable to type '[Omit<never, \\"target\\" | \\"clock\\"> & { clock: Unit<AB>; target: UnitTargetable<AB | null>; }]'.
-          Type '{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }' is not assignable to type 'Omit<never, \\"target\\" | \\"clock\\"> & { clock: Unit<AB>; target: UnitTargetable<AB | null>; }'.
+      Argument of type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }]' is not assignable to parameter of type '[Omit<never, \\"target\\" | \\"clock\\"> & { clock: EventCallable<AB | null>; target: StoreWritable<AB>; }] | [Omit<never, \\"target\\" | \\"clock\\"> & { ...; }]'.
+        Type '[{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }]' is not assignable to type '[Omit<never, \\"target\\" | \\"clock\\"> & { clock: EventCallable<AB | null>; target: StoreWritable<AB>; }]'.
+          Type '{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }' is not assignable to type 'Omit<never, \\"target\\" | \\"clock\\"> & { clock: EventCallable<AB | null>; target: StoreWritable<AB>; }'.
             Type '{ clock: EventCallable<AB | null>; target: StoreWritable<AB>; filter: null; }' is not assignable to type 'Omit<never, \\"target\\" | \\"clock\\">'.
               Property 'clock' is incompatible with index signature.
                 Type 'EventCallable<AB | null>' is not assignable to type 'never'.
