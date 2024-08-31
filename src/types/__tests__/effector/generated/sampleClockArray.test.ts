@@ -799,7 +799,18 @@ test('fn, fnClock (should pass)', () => {
   }
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    no errors
+    Unmarked error at test line 9 'sample({source:a    , clock:[]          , fn:(a,clock) => ({a,clock})       })'
+    Type '(a: string, clock: never) => { a: string; clock: never; }' is not assignable to type '() => any'.
+      Target signature provides too few arguments. Expected 2 or more, but got 0.
+    Unmarked error at test line 29 'sample({source:{a,b}, clock:[]          , fn:({a,b}, clock) => ({a,b,clock})})'
+    Type '({ a, b }: { readonly a: string; readonly b: number; }, clock: never) => { a: string; b: number; clock: never; }' is not assignable to type '() => any'.
+      Target signature provides too few arguments. Expected 2 or more, but got 0.
+    Unmarked error at test line 49 'sample({source:a    , clock:[]          , target:aclock , fn:(a,clock) => ({a,clock})       })'
+    Type '(a: string, clock: never) => { a: string; clock: never; }' is not assignable to type '() => any'.
+      Target signature provides too few arguments. Expected 2 or more, but got 0.
+    Unmarked error at test line 69 'sample({source:{a,b}, clock:[]          , target:abclock, fn:({a,b}, clock) => ({a,b,clock})})'
+    Type '({ a, b }: { readonly a: string; readonly b: number; }, clock: never) => { a: string; b: number; clock: never; }' is not assignable to type '() => any'.
+      Target signature provides too few arguments. Expected 2 or more, but got 0.
     "
   `)
 })

@@ -33,9 +33,9 @@ test('clock param name in the function', () => {
 
   expect(typecheck).toMatchInlineSnapshot(`
     "
-    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
-    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
-    Type 'StoreWritable<string>' is not assignable to type 'Unit<boolean>'.
+    Type 'StoreWritable<string>' is not assignable to type 'Store<boolean> | (() => boolean)'.
+    Type 'StoreWritable<string>' is not assignable to type 'Store<boolean> | (() => boolean)'.
+    Type 'StoreWritable<string>' is not assignable to type 'Store<boolean> | (() => boolean)'.
     "
   `)
 })
