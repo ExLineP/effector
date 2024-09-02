@@ -269,11 +269,11 @@ describe('generic edge cases', () => {
     expect(typecheck).toMatchInlineSnapshot(`
       "
       Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; target: EventCallable<B>; }]' is not assignable to parameter of type '[[A] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
-      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => A; target: EventCallable<B>; }]' is not assignable to parameter of type '[[A] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
-      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => B; target: StoreWritable<A>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => A; target: EventCallable<B>; }]' is not assignable to parameter of type '[[A] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : [error: ...]'.
+      Argument of type '[{ source: StoreWritable<A>; clock: EventCallable<B>; fn: (source: A, clock: B) => B; target: StoreWritable<A>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : [error: ...]'.
       Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; target: EventCallable<B>; }]' is not assignable to parameter of type '[[NonFalsy<A>] extends [Readonly<B>] ? EventCallable<B> : WhichType<B> extends \\"any\\" | \\"void\\" ? EventCallable<B> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
-      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; fn: (source: NonFalsy<A>, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
-      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: (source: A, clock: B) => true; fn: (source: A, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : ([...] extends [...] ? \\"yes\\" : \\"no\\") extends \\"yes\\" ? [error: ...] : [error: ...]'.
+      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: BooleanConstructor; fn: (source: NonFalsy<A>, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : [error: ...]'.
+      Argument of type '[{ clock: EventCallable<B>; source: StoreWritable<A>; filter: (source: A, clock: B) => true; fn: (source: A, clock: B) => B; target: StoreWritable<...>; }]' is not assignable to parameter of type '[[B] extends [Readonly<A>] ? StoreWritable<A> : WhichType<A> extends \\"any\\" | \\"void\\" ? StoreWritable<A> : { ...; }] extends [...] ? [config: ...] : [...] extends [...] ? [config: ...] : [error: ...]'.
       "
     `)
   })
@@ -616,7 +616,7 @@ describe('clock without source', () => {
     })
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 6 'fn: foo => foo,'
+      Type 'string' is not assignable to type 'number'.
       Type 'StoreWritable<number>' is not assignable to type 'Unit<string>'.
         Types of property '__' are incompatible.
           Type 'number' is not assignable to type 'string'.
@@ -638,10 +638,10 @@ describe('clock without source', () => {
 
     expect(typecheck).toMatchInlineSnapshot(`
       "
-      lack of expected error at test line 8 'fn: foo => true,'
-      Type 'StoreWritable<number>' is not assignable to type 'Unit<boolean>'.
+      Type 'boolean' is not assignable to type 'number'.
+      Type 'StoreWritable<number>' is not assignable to type 'Unit<true>'.
         Types of property '__' are incompatible.
-          Type 'number' is not assignable to type 'boolean'.
+          Type 'number' is not assignable to type 'true'.
       "
     `)
   })
